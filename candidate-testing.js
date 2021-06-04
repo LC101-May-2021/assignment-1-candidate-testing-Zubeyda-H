@@ -59,7 +59,7 @@ function runProgram() {
   askQuestion();
   gradeQuiz(this.candidateAnswers);
   
-  let grade = (numberofCorrectAnswers) / (numberofQuizQuestions) * 100;//
+  let grade = (numberofCorrectAnswers) / (numberofQuizQuestions) * 100;
   if (numberofCorrectAnswers >= 4){
     console.log(`>>> Overall Grade: ${grade}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
     
