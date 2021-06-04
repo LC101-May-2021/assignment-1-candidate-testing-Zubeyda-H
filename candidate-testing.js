@@ -37,7 +37,7 @@ function askQuestion() {
   
   for (let i = 0; i < questions.length; i++) {
    candidateAnswers[i] = input
-    .question(questions[i] + '\n' + yourAnswer).toLowerCase();
+    .question(questions[i] + '\n'+ yourAnswer).toLowerCase();
     console.log('Correct Answer: ' + correctAnswers[i]);
      if (correctAnswers[i] === candidateAnswers[i]) {
        numberofCorrectAnswers++;
