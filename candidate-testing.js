@@ -63,6 +63,7 @@ function gradeQuiz() {
 
    console.log(" >>> Status: FAILED <<< ");
   }
+  return grade;
 }
 
 function runProgram() {
