@@ -47,18 +47,11 @@ function askQuestion() {
 
 }
 
-function gradeQuiz(candidateAnswers) {
+function gradeQuiz() {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   //let grade;
 
   //return grade;
-}
-
-function runProgram() {
-  askForName();
-  askQuestion();
-  gradeQuiz(this.candidateAnswers);
-  
   let grade = (numberofCorrectAnswers) / (numberofQuizQuestions) * 100;
   if (numberofCorrectAnswers >= 4){
     console.log(`>>> Overall Grade: ${grade}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
@@ -69,12 +62,16 @@ function runProgram() {
    console.log(`>>> Overall Grade: ${grade}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
 
    console.log(" >>> Status: FAILED <<< ");
-
   }
 }
 
+function runProgram() {
+  askForName();
+  askQuestion();
+  gradeQuiz();  
+}
+
 //Part 2: Multiple Questions
- 
 
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
@@ -88,4 +85,4 @@ module.exports = {
   candidateAnswers: candidateAnswers,
   gradeQuiz: gradeQuiz,
   runProgram: runProgram
-};
+}
