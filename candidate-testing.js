@@ -94,6 +94,9 @@ module.exports = {
   questions: questions,
   correctAnswers: correctAnswers,
   numberofCorrectAnswers: numberofCorrectAnswers,
+  numberofQuizQuestions: numberofQuizQuestions,
+  result: result,
+  yourAnswer: yourAnswer,
   //candidateAnswers: candidateAnswers,
   //gradeQuiz: gradeQuiz,
   runProgram: runProgram
