@@ -48,15 +48,15 @@ function askQuestion() {
 
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  let grade = numberofCorrectAnswers / numberofQuizQuestions;
-  let result = grade * 100;
+  let result = numberofCorrectAnswers / numberofQuizQuestions;
+  //let result = grade * 100;
   if (numberofCorrectAnswers >= 4){
-    console.log(`>>> Overall Grade: ${result}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
+    console.log(`>>> Overall Grade: ${result* 100}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
     
     console.log(">>> Status: PASSED <<<");
 
    } else {
-    console.log(`>>> Overall Grade: ${result}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
+    console.log(`>>> Overall Grade: ${result* 100}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
 
     console.log(" >>> Status: FAILED <<< ");
    }
