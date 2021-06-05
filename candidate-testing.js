@@ -45,7 +45,7 @@ function askQuestion() {
  }
 
 }
-
+/*
 function gradeQuiz() {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   let grade = numberofCorrectAnswers / numberofQuizQuestions;
@@ -62,11 +62,24 @@ function gradeQuiz() {
    }
   return result;
 }
-
+*/
 function runProgram() {
   askForName();
   askQuestion();
-  gradeQuiz();  
+  //gradeQuiz();  
+    let grade = numberofCorrectAnswers / numberofQuizQuestions;
+      result = grade * 100;
+  if (numberofCorrectAnswers >= 4){
+    console.log(`>>> Overall Grade: ${result}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
+    
+    console.log(">>> Status: PASSED <<<");
+
+   } else {
+    console.log(`>>> Overall Grade: ${result}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
+
+    console.log(" >>> Status: FAILED <<< ");
+   }
+  return result;
 }
 
 //Part 2: Multiple Questions
@@ -82,6 +95,6 @@ module.exports = {
   correctAnswers: correctAnswers,
   numberofCorrectAnswers: numberofCorrectAnswers,
   //candidateAnswers: candidateAnswers,
-  gradeQuiz: gradeQuiz,
+  //gradeQuiz: gradeQuiz,
   runProgram: runProgram
 };
