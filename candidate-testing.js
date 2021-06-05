@@ -46,10 +46,10 @@ function askQuestion() {
 
 }
 
-function gradeQuiz() {
+function gradeQuiz(numberofCorrectAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  let grade = (numberofCorrectAnswers) / (numberofQuizQuestions);
-       result= grade * 100;
+  let grade = numberofCorrectAnswers / numberofQuizQuestions;
+       result = grade * 100;
   if (numberofCorrectAnswers >= 4){
     console.log(`>>> Overall Grade: ${result}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
     
@@ -66,7 +66,7 @@ function gradeQuiz() {
 function runProgram() {
   askForName();
   askQuestion();
-  gradeQuiz();  
+  gradeQuiz(numberofCorrectAnswers);  
 }
 
 //Part 2: Multiple Questions
