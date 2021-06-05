@@ -20,7 +20,7 @@ let correctAnswers = ['Sally Ride','true', '40', 'Trajectory', '3'];
 let numberofQuizQuestions=questions.length;
 let correctAnswer = 'Sally Ride';
 let yourAnswer='Your Answer: ';	
-let candidateAnswer = [];	
+let candidateAnswers = [];	
 let numberofCorrectAnswers = 0;
 let result;
 
@@ -36,16 +36,16 @@ function askQuestion() {
   
   for (let i = 0; i < questions.length; i++) {
    //candidateAnswer[i] = input.question(questions[i] + '\n' + yourAnswer).toLowerCase();
-   candidateAnswer[i] = input.question(questions[i] + '\n' + yourAnswer);
+   candidateAnswers[i] = input.question(questions[i] + '\n' + yourAnswer);
    console.log("Correct Answer: " + correctAnswers[i]);
-     if (correctAnswers[i].toLowerCase() === candidateAnswer[i].toLowerCase()) {
+     if (correctAnswers[i].toLowerCase() === candidateAnswers[i].toLowerCase()) {
        numberofCorrectAnswers++;
      }
      console.log("\n");
  }
 
 }
-/*
+
 function gradeQuiz() {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   let grade = numberofCorrectAnswers / numberofQuizQuestions;
@@ -62,12 +62,13 @@ function gradeQuiz() {
    }
   return result;
 }
-*/
+
 function runProgram() {
   askForName();
   askQuestion();
-  //gradeQuiz();  
-    let grade = numberofCorrectAnswers / numberofQuizQuestions;
+  gradeQuiz();  
+/* 
+ let grade = numberofCorrectAnswers / numberofQuizQuestions;
       result = grade * 100;
   if (numberofCorrectAnswers >= 4){
     console.log(`>>> Overall Grade: ${result}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
@@ -80,6 +81,7 @@ function runProgram() {
     console.log(" >>> Status: FAILED <<< ");
    }
   return result;
+  */
 }
 
 //Part 2: Multiple Questions
@@ -90,14 +92,14 @@ module.exports = {
   candidateName: candidateName,
   question: question,
   correctAnswer: correctAnswer,
-  candidateAnswer: candidateAnswer,
+  //candidateAnswer: candidateAnswer,
   questions: questions,
   correctAnswers: correctAnswers,
   numberofCorrectAnswers: numberofCorrectAnswers,
   numberofQuizQuestions: numberofQuizQuestions,
   result: result,
   yourAnswer: yourAnswer,
-  //candidateAnswers: candidateAnswers,
-  //gradeQuiz: gradeQuiz,
+  candidateAnswers: candidateAnswers,
+  gradeQuiz: gradeQuiz,
   runProgram: runProgram
 };
