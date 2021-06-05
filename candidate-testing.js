@@ -23,6 +23,7 @@ let numberofQuizQuestions=questions.length;
 let correctAnswer = 'Sally Ride';
 let yourAnswer='Your Answer: ';	
 let candidateAnswer = [];	
+let result;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
@@ -48,21 +49,19 @@ function askQuestion() {
 
 function gradeQuiz(numberofCorrectAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  let grade=0;
-
-  //return grade;
-  grade = (numberofCorrectAnswers) / (numberofQuizQuestions) * 100;
+  let grade = (numberofCorrectAnswers) / (numberofQuizQuestions);
+       result= grade * 100;
   if (numberofCorrectAnswers >= 4){
-    console.log(`>>> Overall Grade: ${grade}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
+    console.log(`>>> Overall Grade: ${result}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
     
     console.log(">>> Status: PASSED <<<");
 
   } else {
-   console.log(`>>> Overall Grade: ${grade}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
+   console.log(`>>> Overall Grade: ${result}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
 
    console.log(" >>> Status: FAILED <<< ");
   }
-  return grade;
+  return result;
 }
 
 function runProgram() {
