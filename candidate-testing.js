@@ -4,11 +4,6 @@ const input = require('readline-sync');
 let candidateName= "";
 // TODO 1.2a: Define question,correctAnswer, and candidateAnswer //
 let question= 'Who was the first American woman in space? ';
-//let correctAnswer="CorrectAnswer";
-//let candidateAnswer;
-//let questions;
-//let correctAnswers;
-//let candidateAnswers;
 let questions = [
   'Who was the first American woman in space? ',
   'True or false: 5 kilometer == 5000 meters? ',
@@ -19,7 +14,7 @@ let questions = [
 let correctAnswers = ['Sally Ride','true', '40', 'Trajectory', '3'];
 let numberofQuizQuestions=questions.length;
 let correctAnswer = 'Sally Ride';
-let yourAnswer='Your Answer: ';	
+let candidateAnswer='Your Answer: ';	
 let candidateAnswers = [];	
 let numberofCorrectAnswers = 0;
 //let result;
@@ -36,7 +31,7 @@ function askQuestion() {
   
   for (let i = 0; i < questions.length; i++) {
    //candidateAnswer[i] = input.question(questions[i] + '\n' + yourAnswer).toLowerCase();
-   candidateAnswers[i] = input.question(questions[i] + '\n' + yourAnswer);
+   candidateAnswers[i] = input.question(questions[i] + '\n' + candidateAnswer);
    console.log("Correct Answer: " + correctAnswers[i]);
      if (correctAnswers[i].toLowerCase() === candidateAnswers[i].toLowerCase()) {
        numberofCorrectAnswers++;
@@ -48,19 +43,19 @@ function askQuestion() {
 
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  let result = numberofCorrectAnswers / numberofQuizQuestions;
+  let grade = numberofCorrectAnswers / numberofQuizQuestions;
   //let result = grade * 100;
   if (numberofCorrectAnswers >= 4){
-    console.log(`>>> Overall Grade: ${result* 100}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
+    console.log(`>>> Overall Grade: ${grade * 100}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
     
     console.log(">>> Status: PASSED <<<");
 
    } else {
-    console.log(`>>> Overall Grade: ${result* 100}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
+    console.log(`>>> Overall Grade: ${grade * 100}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
 
     console.log(" >>> Status: FAILED <<< ");
    }
-  return result;
+  return grade;
 }
 
 function runProgram() {
@@ -77,13 +72,11 @@ module.exports = {
   candidateName: candidateName,
   question: question,
   correctAnswer: correctAnswer,
-  //candidateAnswer: candidateAnswer,
+  candidateAnswer: candidateAnswer,
   questions: questions,
   correctAnswers: correctAnswers,
   numberofCorrectAnswers: numberofCorrectAnswers,
   numberofQuizQuestions: numberofQuizQuestions,
-  //result: result,
-  yourAnswer: yourAnswer,
   candidateAnswers: candidateAnswers,
   gradeQuiz: gradeQuiz,
   runProgram: runProgram

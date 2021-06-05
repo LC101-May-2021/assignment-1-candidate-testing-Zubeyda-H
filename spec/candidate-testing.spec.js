@@ -59,7 +59,7 @@ describe("Candidate Testing solution", function() {
 	});
 
   // PART 3 //
-  /* gradeQuiz tests
+  // gradeQuiz tests //
   it("gradeQuiz returns a 0 for all wrong answers", function() {
     solution.candidateAnswers = ["foo", "bar", "baz", "lur", "man"];
     expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(0);
@@ -94,7 +94,6 @@ describe("Candidate Testing solution", function() {
     solution.candidateAnswers = ["sally ride", "TRUE", "40", "TrAjEcToRy", "3"];
     expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(100);
 	});
-*/
 
  
  });
