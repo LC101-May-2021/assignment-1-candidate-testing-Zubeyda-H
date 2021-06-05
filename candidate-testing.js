@@ -22,12 +22,12 @@ let correctAnswer = 'Sally Ride';
 let yourAnswer='Your Answer: ';	
 let candidateAnswers = [];	
 let numberofCorrectAnswers = 0;
-let result;
+//let result;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
   candidateName= input.question("Your Name: ");
-  console.log("Hello,",candidateName);
+  //console.log("Hello,",candidateName);
   console.log("\n");
 }
 
@@ -49,7 +49,7 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   let grade = numberofCorrectAnswers / numberofQuizQuestions;
-      result = grade * 100;
+  let result = grade * 100;
   if (numberofCorrectAnswers >= 4){
     console.log(`>>> Overall Grade: ${result}% (${numberofCorrectAnswers} of ${numberofQuizQuestions} responses correct) <<<`);
     
@@ -82,7 +82,7 @@ module.exports = {
   correctAnswers: correctAnswers,
   numberofCorrectAnswers: numberofCorrectAnswers,
   numberofQuizQuestions: numberofQuizQuestions,
-  result: result,
+  //result: result,
   yourAnswer: yourAnswer,
   candidateAnswers: candidateAnswers,
   gradeQuiz: gradeQuiz,
