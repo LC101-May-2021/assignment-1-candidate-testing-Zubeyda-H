@@ -9,13 +9,11 @@ let question= 'Who was the first American woman in space? ';
 //let questions;
 //let correctAnswers;
 //let candidateAnswers;
-
-let numberofCorrectAnswers = 0;
 let questions = [
   'Who was the first American woman in space? ',
   'True or false: 5 kilometer == 5000 meters? ',
   '(5 + 3)/2 * 10 = ? ',
-  'Given the array [8, Orbit, Trajectory, 45], what entry is at index 2? ',
+  'Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2? ',
   'What is the minimum crew size for the ISS? '
 ];
 let correctAnswers = ['Sally Ride','true', '40', 'Trajectory', '3'];
@@ -23,6 +21,7 @@ let numberofQuizQuestions=questions.length;
 let correctAnswer = 'Sally Ride';
 let yourAnswer='Your Answer: ';	
 let candidateAnswer = [];	
+let numberofCorrectAnswers = 0;
 let result;
 
 function askForName() {
@@ -36,10 +35,10 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   
   for (let i = 0; i < questions.length; i++) {
-   candidateAnswer[i] = input
-    .question(questions[i] + '\n'+ yourAnswer).toLowerCase();
-    console.log(correctAnswer + correctAnswers[i]);
-     if (correctAnswers[i] === candidateAnswer[i]) {
+   //candidateAnswer[i] = input.question(questions[i] + '\n' + yourAnswer).toLowerCase();
+   candidateAnswer[i] = input.question(questions[i] + '\n' + yourAnswer);
+   console.log("Correct Answer: " + correctAnswers[i]);
+     if (correctAnswers[i].toUpperCase() === candidateAnswer[i].toUpperCase()) {
        numberofCorrectAnswers++;
      }
      console.log("\n");
@@ -47,7 +46,7 @@ function askQuestion() {
 
 }
 
-function gradeQuiz(numberofCorrectAnswers) {
+function gradeQuiz() {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   let grade = (numberofCorrectAnswers) / (numberofQuizQuestions);
        result= grade * 100;
@@ -67,7 +66,7 @@ function gradeQuiz(numberofCorrectAnswers) {
 function runProgram() {
   askForName();
   askQuestion();
-  gradeQuiz(numberofCorrectAnswers);  
+  gradeQuiz();  
 }
 
 //Part 2: Multiple Questions
