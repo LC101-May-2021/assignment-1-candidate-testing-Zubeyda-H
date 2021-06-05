@@ -95,6 +95,5 @@ describe("Candidate Testing solution", function() {
     expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(100);
 	});
 
-	
  
  });
