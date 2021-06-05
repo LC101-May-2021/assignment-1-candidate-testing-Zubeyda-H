@@ -80,7 +80,8 @@ module.exports = {
   candidateAnswer: candidateAnswer,
   questions: questions,
   correctAnswers: correctAnswers,
+  numberofCorrectAnswers: numberofCorrectAnswers,
   //candidateAnswers: candidateAnswers,
   gradeQuiz: gradeQuiz,
   runProgram: runProgram
-}
+};
